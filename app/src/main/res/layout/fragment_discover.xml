@@ -134,17 +134,6 @@
                 android:orientation="horizontal"
                 android:overScrollMode="never"/>
 
-            <TextView
-                android:id="@+id/tv_testing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/ubuntu_bold"
-                android:textColor="@color/textPrimary"
-                android:textSize="22sp"
-                android:text="Top 10 This season"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"/>
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_anime"
                 android:layout_width="match_parent"

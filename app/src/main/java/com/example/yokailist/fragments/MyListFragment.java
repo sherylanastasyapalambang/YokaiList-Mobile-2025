@@ -1,5 +1,12 @@
 package com.example.yokailist.fragments;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkInfo;
+import android.net.NetworkRequest;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -29,6 +36,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MyListFragment extends Fragment {
+    private ConnectivityManager connectivityManager;
+    private ConnectivityManager.NetworkCallback networkCallback;
     private MyListAdapter adapter;
     private AnimeStatusHelper animeStatusHelper;
     private List<AnimeStatus> allAnimeList = new ArrayList<>();
@@ -62,6 +71,9 @@ public class MyListFragment extends Fragment {
 
         ibFilter.setOnClickListener(v -> showFilterMenu());
 
+        connectivityManager = (ConnectivityManager) requireContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        setupNetworkCallback();
+
         return view;
     }
 
@@ -82,6 +94,11 @@ public class MyListFragment extends Fragment {
         rvMyList.setVisibility(View.GONE);
         llFailedToLoad.setVisibility(View.GONE);
         llNoResult.setVisibility(View.GONE);
+
+        if (!isInternetAvailable()) {
+            showNoInternetMessage();
+            return;
+        }
 
         if (animeStatusHelper == null) {
             animeStatusHelper = AnimeStatusHelper.getInstance(getContext());
@@ -164,5 +181,67 @@ public class MyListFragment extends Fragment {
         if (animeStatusHelper != null) {
             animeStatusHelper.close();
         }
+
+        if (networkCallback != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            try {
+                connectivityManager.unregisterNetworkCallback(networkCallback);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void setupNetworkCallback() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            networkCallback = new ConnectivityManager.NetworkCallback() {
+                @Override
+                public void onAvailable(@NonNull Network network) {
+                    super.onAvailable(network);
+                    requireActivity().runOnUiThread(() -> {
+                        hideNoInternetMessage();
+
+                        loadAnimeData();
+                    });
+                }
+
+                @Override
+                public void onLost(@NonNull Network network) {
+                    super.onLost(network);
+                    requireActivity().runOnUiThread(() -> {
+                        showNoInternetMessage();
+                    });
+                }
+            };
+
+            NetworkRequest.Builder builder = new NetworkRequest.Builder();
+            connectivityManager.registerNetworkCallback(builder.build(), networkCallback);
+        }
+    }
+
+    private boolean isInternetAvailable() {
+        if (connectivityManager != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.getActiveNetwork());
+                return capabilities != null &&
+                        (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+                                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
+                                capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET));
+            } else {
+                NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+                return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+            }
+        }
+        return false;
+    }
+
+    private void showNoInternetMessage() {
+        progressBar.setVisibility(View.GONE);
+        rvMyList.setVisibility(View.GONE);
+        llNoResult.setVisibility(View.GONE);
+        llFailedToLoad.setVisibility(View.VISIBLE);
+    }
+
+    private void hideNoInternetMessage() {
+        llFailedToLoad.setVisibility(View.GONE);
     }
 }
