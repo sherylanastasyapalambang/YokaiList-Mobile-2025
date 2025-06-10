@@ -1,5 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="bgStartGradient">#FFf5f5f5</color>
+    <color name="bgCenterGradient">#FFe0ebf5</color>
+    <color name="bgEndGradient">#FFc8ddef</color>
+
+    <color name="DKGenreStartGradient">#FFd5e9fb</color>
+    <color name="DKGenreCenterGradient">#FFb3d4f1</color>
+    <color name="DKGenreEndGradient">#FF8cbce6</color>
+
+
+    <color name="bgGrey">#c8cacc</color>
+
+    <color name="DKTextBlueHighlight">#93c5fd</color>
+    <color name="DKTextBlue">#124e99</color>
+
+    <color name="DKProgressBarGrey">#bdbdbd</color>
+    <color name="DKProgressBarBlue">#6884C2</color>
+    <color name="DKProgressBarGreen">#76B676</color>
+    <color name="DKProgressBarYellow">#F2C94C</color>
+    <color name="DKProgressBarRed">#D46A6E</color>
+
+    <color name="DKGenreTrue">#1d3757</color>
+
+    <color name="textPrimary">#FF0d1421</color>
+
+    <color name="searchBar">#80FFFFFF</color>
+    <color name="VItemBtnEdit">#c9c9c9</color>
+
+    <color name="addBlueButton">#2c4273</color>
+
+
+    <color name="transparent">#00000000</color>
+
     <color name="black">#FF000000</color>
+    <color name="black10">#1A000000</color>
+    <color name="black30">#4D000000</color>
+    <color name="black50">#80000000</color>
+    <color name="black70">#4D000000</color>
+    <color name="black60">#66000000</color>
+    <color name="black80">#33000000</color>
+    <color name="black90">#1A000000</color>
+
     <color name="white">#FFFFFFFF</color>
+    <color name="white30">#4DFFFFFF</color>
+    <color name="white50">#80FFFFFF</color>
+
+    <color name="lighterGrey">#747575</color>
+    <color name="grey">#FF404040</color>
+    <color name="darkGrey">#404040</color>
+
+    <color name="darkGrey30">#4D404040</color>
+    <color name="darkGrey50">#80404040</color>
+    <color name="darkGrey90">#E6303030</color>
+
+    <color name="darkGrey90_darker">#E6101010</color>
+
+    <color name="red">#b8242c</color>
+
+
+    <color name="nav">#2c4273</color>
+
+
 </resources>

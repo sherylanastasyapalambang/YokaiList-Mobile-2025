@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nb_home"
+        android:icon="@drawable/nav_icon_dk_home"
+        android:title="home" />
+    <item
+        android:id="@+id/nb_discover"
+        android:icon="@drawable/nav_icon_dk_discover"
+        android:title="discover" />
+    <item
+        android:id="@+id/nb_seasonal"
+        android:icon="@drawable/nav_icon_dk_seasonal"
+        android:title="seasonal" />
+    <item
+        android:id="@+id/nb_myList"
+        android:icon="@drawable/nav_icon_dk_my_list"
+        android:title="my list" />
+</menu>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingStart="5dp">
+
+    <Button
+        android:id="@+id/btn_genre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Fantasy"
+        android:textColor="@color/lighterGrey"
+        android:background="@drawable/shape_dk_genre"
+        android:textSize="14sp"
+        app:backgroundTint="@null"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:minHeight="10dp" />
+</LinearLayout>

@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.anime.AnimeDetailActivity"
+    android:background="@drawable/bg_gradient">
+
+    <ImageButton
+        android:id="@+id/ib_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_dk_close"
+        android:background="@null"
+        android:padding="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YokaiList"
+        android:textSize="23sp"
+        android:textColor="@color/textPrimary"
+        android:fontFamily="@font/qetod"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:id="@+id/v_dividerLineTop"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="@color/lighterGrey"
+        app:layout_constraintTop_toBottomOf="@id/ib_back"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/v_dividerLineTop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_cover"
+                android:layout_width="229dp"
+                android:layout_height="304dp"
+                android:src="@drawable/img_snf"
+                android:background="@drawable/shape_border"
+                android:padding="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_scoreLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_regular"
+                android:textColor="@color/lighterGrey"
+                android:textSize="15sp"
+                android:text="Score"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/ll_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/tv_scoreLabel"
+                app:layout_constraintTop_toBottomOf="@id/tv_scoreLabel">
+
+                <ImageView
+                    android:id="@+id/iv_score"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_score"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/tv_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_medium"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="23sp"
+                    android:text="9.30"
+                    android:layout_marginStart="5dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_rankLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_regular"
+                android:textColor="@color/lighterGrey"
+                android:textSize="15sp"
+                android:text="Rank"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/ll_score"
+                app:layout_constraintEnd_toEndOf="@id/tv_scoreLabel" />
+
+            <TextView
+                android:id="@+id/tv_rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_medium"
+                android:textColor="@color/textPrimary"
+                android:textSize="18sp"
+                android:text="#1"
+                app:layout_constraintTop_toBottomOf="@id/tv_rankLabel"
+                app:layout_constraintEnd_toEndOf="@id/tv_scoreLabel" />
+
+            <TextView
+                android:id="@+id/tv_popularityLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_regular"
+                android:textColor="@color/lighterGrey"
+                android:textSize="15sp"
+                android:text="Popularity"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_rank"
+                app:layout_constraintEnd_toEndOf="@id/tv_scoreLabel" />
+
+            <TextView
+                android:id="@+id/tv_popularity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_medium"
+                android:textColor="@color/textPrimary"
+                android:textSize="18sp"
+                android:text="#142"
+                app:layout_constraintTop_toBottomOf="@id/tv_popularityLabel"
+                app:layout_constraintEnd_toEndOf="@id/tv_scoreLabel" />
+
+            <TextView
+                android:id="@+id/tv_membersLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_regular"
+                android:textColor="@color/lighterGrey"
+                android:textSize="15sp"
+                android:text="Members"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_popularity"
+                app:layout_constraintEnd_toEndOf="@id/tv_scoreLabel" />
+
+            <TextView
+                android:id="@+id/tv_members"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_medium"
+                android:textColor="@color/textPrimary"
+                android:textSize="18sp"
+                android:text="1,132,987"
+                app:layout_constraintTop_toBottomOf="@id/tv_membersLabel"
+                app:layout_constraintEnd_toEndOf="@id/tv_scoreLabel" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textColor="@color/textPrimary"
+                android:textSize="23dp"
+                android:textAlignment="center"
+                android:text="Sousou No Frieren"
+                app:layout_constraintTop_toBottomOf="@id/iv_cover" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/bgGrey"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:layout_marginVertical="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_regular"
+                        android:text="TV"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="17sp"
+                        android:textAlignment="center"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tv_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_regular"
+                        android:text="Finished"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="17sp"
+                        android:textAlignment="center"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tv_epsDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_regular"
+                        android:text="28 ep, 24 min"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="17sp"
+                        android:textAlignment="center"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_genres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:text="Adventure     Drama     Fantasy"
+                    android:textColor="@color/DKTextBlue"
+                    android:textSize="15sp"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_synopsis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_regular"
+                android:textColor="@color/textPrimary"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                android:text="plis plis pliss"
+                android:paddingHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:ellipsize="none"
+                android:maxLines="1000"
+                app:layout_constraintTop_toBottomOf="@id/ll_info" />
+
+            <ImageButton
+                android:id="@+id/ib_synopsisDetail"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_down"
+                android:background="@null"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_synopsis"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <ImageView
+                android:id="@+id/iv_noImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/img_noimglandscape"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ib_synopsisDetail"/>
+
+            <FrameLayout
+                android:id="@+id/fl_playTrailer"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ib_synopsisDetail">
+
+                <ImageView
+                    android:id="@+id/iv_trailer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_thumbnail" />
+
+                <ImageButton
+                    android:id="@+id/ib_trailer"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_play"
+                    android:background="@android:color/transparent" />
+            </FrameLayout>
+
+
+            <TextView
+                android:id="@+id/tv_EnglishTitleLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_regular"
+                android:text="English"
+                android:textColor="@color/lighterGrey"
+                android:textSize="13sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fl_playTrailer" />
+
+            <TextView
+                android:id="@+id/tv_EnglishTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_medium"
+                android:text="Frieren: Beyond Journey's End"
+                android:textColor="@color/textPrimary"
+                android:textSize="15sp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_EnglishTitleLabel" />
+
+            <LinearLayout
+                android:id="@+id/ll_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_EnglishTitle">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp">
+
+                    <!-- KIRI: SOURCE -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_sourceLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_regular"
+                            android:text="Source"
+                            android:textColor="@color/lighterGrey"
+                            android:textSize="13sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_source"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_medium"
+                            android:text="Manga"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="15sp"/>
+                    </LinearLayout>
+
+                    <!-- KANAN: SEASON -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_seasonLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_regular"
+                            android:text="Season"
+                            android:textColor="@color/lighterGrey"
+                            android:textSize="13sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_season"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_medium"
+                            android:text="Fall 2023"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="15sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp"
+                    android:paddingHorizontal="10dp">
+
+                    <!-- KIRI: SOURCE -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_studioLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_regular"
+                            android:text="Studio"
+                            android:textColor="@color/lighterGrey"
+                            android:textSize="13sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_studio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_medium"
+                            android:text="Madhouse"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="15sp"/>
+                    </LinearLayout>
+
+                    <!-- KANAN: SEASON -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_airedLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_regular"
+                            android:text="Aired"
+                            android:textColor="@color/lighterGrey"
+                            android:textSize="13sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_aired"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_medium"
+                            android:text="Sep 29, 2023 to Mar 22, 2024"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="15sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginTop="15dp"
+                    >
+
+                    <!-- KIRI: SOURCE -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_ratingLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_regular"
+                            android:text="Rating"
+                            android:textColor="@color/lighterGrey"
+                            android:textSize="13sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_medium"
+                            android:text="PG-13 - Teens 13 or older"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="15sp"/>
+                    </LinearLayout>
+
+                    <!-- KANAN: SEASON -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_licensorLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_regular"
+                            android:text="Licensor"
+                            android:textColor="@color/lighterGrey"
+                            android:textSize="13sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_licensor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_medium"
+                            android:text="Unknown"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="15sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_characters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                tools:listitem="@layout/item_character"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="30dp"
+                app:layout_constraintTop_toBottomOf="@id/ll_details"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageButton
+        android:id="@+id/ib_addToMyList"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_addtomylist"
+        android:scaleType="centerInside"
+        android:background="@drawable/shape_button_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/ll_failedToLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_nowifi"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_regular"
+            android:textColor="@color/lighterGrey"
+            android:textSize="17sp"
+            android:text="No Internet Connection"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

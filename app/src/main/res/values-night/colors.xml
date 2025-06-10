@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bgStartGradient">#FF000000</color>
+    <color name="bgCenterGradient">#FF0d1421</color>
+    <color name="bgEndGradient">#FF1d2938</color>
+
+    <color name="DKGenreStartGradient">#FF111C2B</color>
+    <color name="DKGenreCenterGradient">#FF203148</color>
+    <color name="DKGenreEndGradient">#FF2F4560</color>
+
+    <color name="bgGrey">#E6101010</color>
+
+    <color name="DKTextBlueHighlight">#124e99</color>
+    <color name="DKTextBlue">#93c5fd</color>
+
+    <color name="DKProgressBarGrey">#2e2e2e</color>
+    <color name="DKProgressBarBlue">#2c4273</color>
+    <color name="DKProgressBarGreen">#498349</color>
+    <color name="DKProgressBarYellow">#cba320</color>
+    <color name="DKProgressBarRed">#832f33</color>
+
+    <color name="DKGenreTrue">#1d3757</color>
+
+    <color name="textPrimary">#FFFFFFFF</color>
+
+    <color name="searchBar">#E6101010</color>
+    <color name="VItemBtnEdit">#E6101010</color>
+
+    <color name="addBlueButton">#2c4273</color>
+
+
+    <color name="transparent">#00000000</color>
+
+
+
+    <color name="black">#FF000000</color>
+    <color name="black30">#4D000000</color>
+    <color name="black50">#80000000</color>
+    <color name="black70">#4D000000</color>
+    <color name="black60">#66000000</color>
+    <color name="black80">#33000000</color>
+    <color name="black90">#1A000000</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="white30">#4DFFFFFF</color>
+    <color name="white50">#80FFFFFF</color>
+
+    <color name="lighterGrey">#747575</color>
+    <color name="grey">#FF404040</color>
+    <color name="darkGrey">#404040</color>
+
+    <color name="darkGrey30">#4D404040</color>
+    <color name="darkGrey50">#80404040</color>
+    <color name="darkGrey90">#E6303030</color>
+
+    <color name="darkGrey90_darker">#E6101010</color>
+
+    <color name="red">#b8242c</color>
+
+
+    <color name="nav">#FF080D16</color>
+
+
+</resources>

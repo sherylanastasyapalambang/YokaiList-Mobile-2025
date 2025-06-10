@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.anime.AddToMyListActivity"
+    android:background="@drawable/bg_gradient">
+
+    <ImageButton
+        android:id="@+id/ib_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_dk_close"
+        android:background="@null"
+        android:padding="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColor="@color/textPrimary"
+        android:text="Save"
+        android:textSize="20sp"
+        android:background="@color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:id="@+id/v_dividerLineTop"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="@color/lighterGrey"
+        app:layout_constraintTop_toBottomOf="@id/ib_back"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/v_dividerLineTop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:fillViewport="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textColor="@color/textPrimary"
+                android:textSize="20sp"
+                android:text="Sousou No Frieren"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_statusLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_regular"
+                android:textColor="@color/lighterGrey"
+                android:textSize="17sp"
+                android:text="Status"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="15dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textColor="@color/textPrimary"
+                android:textSize="17sp"
+                android:textAlignment="textEnd"
+                android:text="Finished"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="15dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                app:layout_constraintStart_toEndOf="@id/tv_statusLabel"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/ll_buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_statusLabel"
+                app:layout_constraintStart_toStartOf="@id/tv_statusLabel"
+                app:layout_constraintEnd_toEndOf="@id/tv_status">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_watching"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:textColor="@color/textPrimary"
+                        android:text="Watching"
+                        android:textSize="17sp"
+                        android:minHeight="10dp"
+                        android:paddingHorizontal="15dp"
+                        android:background="@drawable/shape_status_no"
+                        app:backgroundTint="@null"/>
+
+                    <Button
+                        android:id="@+id/btn_completed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:textColor="@color/textPrimary"
+                        android:text="Completed"
+                        android:textSize="17sp"
+                        android:minHeight="10dp"
+                        android:paddingHorizontal="15dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@drawable/shape_status_no"
+                        app:backgroundTint="@null"/>
+
+                    <Button
+                        android:id="@+id/btn_planToWatch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:textColor="@color/textPrimary"
+                        android:text="Plan to watch"
+                        android:textSize="17sp"
+                        android:minHeight="10dp"
+                        android:paddingHorizontal="10dp"
+                        android:background="@drawable/shape_status_no"
+                        app:backgroundTint="@null"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/btn_onHold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:textColor="@color/textPrimary"
+                        android:text="On Hold"
+                        android:textSize="17sp"
+                        android:minHeight="10dp"
+                        android:paddingHorizontal="15dp"
+                        android:background="@drawable/shape_status_no"
+                        app:backgroundTint="@null"/>
+
+                    <Button
+                        android:id="@+id/btn_dropped"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:textColor="@color/textPrimary"
+                        android:text="Dropped"
+                        android:textSize="17sp"
+                        android:minHeight="10dp"
+                        android:paddingHorizontal="15dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/shape_status_no"
+                        app:backgroundTint="@null"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_episodesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_regular"
+                android:textColor="@color/lighterGrey"
+                android:textSize="17sp"
+                android:text="Proggress"
+                android:layout_marginTop="30dp"
+                android:layout_marginHorizontal="15dp"
+                app:layout_constraintTop_toBottomOf="@id/ll_buttons"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_episodes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textColor="@color/textPrimary"
+                android:textSize="17sp"
+                android:textAlignment="textEnd"
+                android:text="28 ep"
+                android:layout_marginTop="30dp"
+                android:layout_marginHorizontal="15dp"
+                app:layout_constraintTop_toBottomOf="@id/ll_buttons"
+                app:layout_constraintStart_toEndOf="@id/tv_statusLabel"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/ll_progressInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_episodesLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageButton
+                    android:id="@+id/ib_progressMin"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_dk_min"
+                    android:background="@null"
+                    android:padding="15dp"/>
+
+                <EditText
+                    android:id="@+id/et_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:hint="0"
+                    android:textColorHint="@color/lighterGrey"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="25sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/shape_status_no"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="20dp"
+                    android:layout_marginHorizontal="15dp"/>
+
+                <ImageButton
+                    android:id="@+id/ib_progressAdd"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_dk_addeps"
+                    android:background="@null"
+                    android:padding="15dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_scoreLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_regular"
+                android:textColor="@color/lighterGrey"
+                android:textSize="17sp"
+                android:text="Score"
+                android:layout_marginTop="30dp"
+                android:layout_marginHorizontal="15dp"
+                app:layout_constraintTop_toBottomOf="@id/ll_progressInput"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+            <LinearLayout
+                android:id="@+id/ll_scoreInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_scoreLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageButton
+                    android:id="@+id/ib_scoreMin"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_dk_min"
+                    android:background="@null"
+                    android:padding="15dp"/>
+
+                <EditText
+                    android:id="@+id/et_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:hint="0"
+                    android:textColorHint="@color/lighterGrey"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="25sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/shape_status_no"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="20dp"
+                    android:layout_marginHorizontal="15dp"/>
+
+                <ImageButton
+                    android:id="@+id/ib_scoreAdd"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_dk_addeps"
+                    android:background="@null"
+                    android:padding="15dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_dateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_regular"
+                android:textColor="@color/lighterGrey"
+                android:textSize="17sp"
+                android:text="Date"
+                android:layout_marginTop="30dp"
+                android:layout_marginHorizontal="15dp"
+                app:layout_constraintTop_toBottomOf="@id/ll_scoreInput"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textColor="@color/textPrimary"
+                android:textSize="17sp"
+                android:textAlignment="textEnd"
+                android:text="Sep 29, 2023 - Mar 28, 2024"
+                android:layout_marginTop="30dp"
+                android:layout_marginHorizontal="15dp"
+                app:layout_constraintTop_toBottomOf="@id/ll_scoreInput"
+                app:layout_constraintStart_toEndOf="@id/tv_statusLabel"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <EditText
+                android:id="@+id/et_startDate"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:fontFamily="@font/ubuntu_regular"
+                android:hint="Start Date"
+                android:textColorHint="@color/lighterGrey"
+                android:textColor="@color/textPrimary"
+                android:textSize="17sp"
+                android:textAlignment="center"
+                android:paddingVertical="10dp"
+                android:clickable="true"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:inputType="text"
+                android:longClickable="false"
+                app:layout_constraintStart_toStartOf="@id/tv_dateLabel"
+                app:layout_constraintEnd_toStartOf="@id/btn_startToday"
+                app:layout_constraintTop_toTopOf="@id/btn_startToday"/>
+
+            <Button
+                android:id="@+id/btn_startToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_medium"
+                android:text="Today"
+                android:textColor="@color/textPrimary"
+                android:textSize="17sp"
+                android:background="@color/transparent"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="15dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_date"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <EditText
+                android:id="@+id/et_endDate"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:fontFamily="@font/ubuntu_regular"
+                android:hint="Finish Date"
+                android:textColorHint="@color/lighterGrey"
+                android:textColor="@color/textPrimary"
+                android:textSize="17sp"
+                android:textAlignment="center"
+                android:paddingVertical="10dp"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:inputType="text"
+                android:longClickable="false"
+                app:layout_constraintStart_toStartOf="@id/tv_dateLabel"
+                app:layout_constraintEnd_toStartOf="@id/btn_endToday"
+                app:layout_constraintTop_toTopOf="@id/btn_endToday"/>
+
+            <Button
+                android:id="@+id/btn_endToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_medium"
+                android:textColor="@color/textPrimary"
+                android:text="Today"
+                android:textSize="17sp"
+                android:background="@color/transparent"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="15dp"
+                app:layout_constraintTop_toBottomOf="@id/et_startDate"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <View
+                android:id="@+id/v_dividerLineBottom"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:background="@color/lighterGrey"
+                app:layout_constraintTop_toTopOf="@id/btn_remove"/>
+
+            <LinearLayout
+                android:id="@+id/btn_remove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_remove"
+                    android:padding="15dp"
+                    android:layout_marginStart="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_remove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:textColor="@color/red"
+                    android:textSize="17sp"
+                    android:text="Remove from list"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/ll_failedToLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_nowifi"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_regular"
+            android:textColor="@color/lighterGrey"
+            android:textSize="17sp"
+            android:text="No Internet Connection"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

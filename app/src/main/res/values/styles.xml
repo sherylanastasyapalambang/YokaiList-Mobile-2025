@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="roundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">5%</item>
+    </style>
+
+    <style name="NumberPickerStyle">
+        <item name="android:textColorPrimary">#ffffff</item>
+        <item name="android:textColorSecondary">#888888</item>
+        <item name="android:colorControlNormal">#4285f4</item>
+        <item name="android:colorControlActivated">#4285f4</item>
+        <item name="android:colorAccent">#4285f4</item>
+        <item name="android:background">#2a2a2a</item>
+    </style>
+
+    <style name="NoBackgroundBottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemRippleColor">@android:color/transparent</item>
+
+        <item name="itemBackground">@android:color/transparent</item>
+    </style>
+
+
+</resources>

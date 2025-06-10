@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/all"
+        android:title="All" />
+    <item
+        android:id="@+id/sort_by_watching"
+        android:title="Watching" />
+    <item
+        android:id="@+id/sort_by_Completed"
+        android:title="Completed" />
+    <item
+        android:id="@+id/sort_by_OnHold"
+        android:title="On Hold" />
+    <item
+        android:id="@+id/sort_by_Dropped"
+        android:title="Dropped" />
+    <item
+        android:id="@+id/sort_by_PlanToWatch"
+        android:title="Plan To Watch" />
+</menu>

@@ -3,6 +3,10 @@ plugins {
 }
 
 android {
+    buildFeatures{
+        viewBinding = true;
+    }
+
     namespace = "com.example.yokailist"
     compileSdk = 35
 
@@ -32,6 +36,7 @@ android {
 }
 
 dependencies {
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -40,4 +45,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    implementation(libs.glide)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit2.converter.gson)
+
+
 }
