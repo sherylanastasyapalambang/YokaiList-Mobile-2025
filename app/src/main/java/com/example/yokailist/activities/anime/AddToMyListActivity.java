@@ -699,8 +699,6 @@ public class AddToMyListActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-
-
     private void setupNetworkCallback() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             networkCallback = new ConnectivityManager.NetworkCallback() {

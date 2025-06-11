@@ -333,7 +333,7 @@ public class DiscoverFragment extends Fragment {
         et_search.setEnabled(false);
         ib_empty.setEnabled(false);
         ll_failedToLoad.setVisibility(View.GONE);
-        rvGenre.setVisibility(View.GONE);
+//        rvGenre.setVisibility(View.GONE);
         isLoadingFailed = false;
 
         ApiService apiService = ApiConfig.getApiService();
