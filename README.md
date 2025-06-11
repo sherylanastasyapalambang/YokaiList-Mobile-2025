@@ -2,6 +2,9 @@
 
 **YokaiList** adalah aplikasi Android untuk para penggemar anime yang ingin dengan mudah mencari, melihat anime musiman (seasonal), serta mengatur daftar tontonan mereka secara terorganisir. Dibuat dengan Java dan Android Studio, aplikasi ini bertujuan untuk menggantikan kebiasaan mencatat daftar anime secara manual di notes dan melihat season anime dengan mudah. 
 
+Klik di sini untuk mencoba aplikasinya:  
+👉 [**YokaiList**](./app-debug.apk)
+
 ---
 
 ## 📌 Fitur Utama
